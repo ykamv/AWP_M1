@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Project</title>
+	
+	<style>
+	
+		h1 {
+			text-align: center;
+		}
+		
+		table{
+			font-size: 1.2em;
+			width: 80vw;
+			margin: 0 10vw 0 10vw;
+			height: 250px;
+		}
+		
+	</style>
+	
+</head>
+
+<body>
+	
+	<h1>Projects</h1>
+
+
+
+	 <table class="table-striped table-bordered mt-3 mb-5">
+		<thead>
+			<tr>
+				<th scope="col" >Project</th>
+				<th scope="col" >Description</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr ng-repeat="p in project">
+				<td>{{p.proj}}</td>
+				<td>{{p.desc}}</td>
+			</tr>
+		</tbody>
+	</table>
+	
+</body>
+</html>

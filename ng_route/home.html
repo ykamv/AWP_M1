@@ -1,0 +1,31 @@
+<!doctype html>
+<html ng-app="myApp">
+
+	<head>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular-route.min.js"></script>
+		
+		<title>Home</title>
+
+	</head>
+
+	<body>
+		<nav>
+			<a href="#" > Portfolio</a>
+			<div>
+				<ul>
+					<li ><a href="#/about" >About</a></li>
+					<li><a href="#/resume">Resume</a></li>
+					<li><a href="#/project">Project</a></li>
+					<li><a href="#/contact" >Contact</a></li>
+				</ul>
+			</div>
+		</nav>
+		
+		<div ng-view class="component"></div>
+
+		<script src="app.js"></script>
+
+	</body>
+
+</html>

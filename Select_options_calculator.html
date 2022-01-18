@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<body ng-app="myApp">
+
+    <div ng-controller="calculator">
+
+        <h1>Incentive Calculator</h1>
+        Name: <input type="text" ng-model="name"><br>
+        Salary: <input type="number" ng-model="salary"><br>
+        <p>
+            <select name="desig" id="desig" ng-model="desig">
+                <option value="">--Please choose an option--</option>
+                <option value="1">Manager</option>
+                <option value="2">Developer</option>
+                <option value="3">Tester</option>
+            </select>
+        </p>
+        <button ng-click="calc(name,salary,desig)">Calculate</button><br><br>
+
+        <input type="text" ng-disabled="true" value={{result}} size="100"><br>
+
+    </div>
+
+
+
+    <script>
+        var app = angular.module('myApp', []);
+        app.controller('calculator', function ($scope) {
+
+            $scope.result = "";
+            $scope.incentive = "";
+
+            $scope.calc = function (name, salary, desig) {
+                $scope.name = name;
+                $scope.salary = salary;
+                $scope.desig = desig;
+
+                if ($scope.desig == 1) {
+                    $scope.incentive = (5 / 100) * $scope.salary;
+                }
+                else if ($scope.desig == 2) {
+                    $scope.incentive = (10 / 100) * $scope.salary;
+                }
+                else if ($scope.desig == 3) {
+                    $scope.incentive = (15 / 100) * $scope.salary;
+                }
+
+                $scope.result = "Hello " + $scope.name + ", your salary is " + $scope.salary + " and your incentive is " + $scope.incentive;
+                console.log($scope.result);
+            }
+        });
+
+    </script>
+
+</body>
+
+</html>

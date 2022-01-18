@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+   <meta chrset="UTF 8">
+   <title>Event Registration</title>
+</head>
+<body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<div ng-app="DemoEvent">
+   <div ng-link="">Click Here</div>
+</div>
+
+<script type="text/javascript">
+    
+    var demo = angular.module('DemoEvent',[]);
+    demo.directive('ngLink',function(){
+       return {
+
+           link:function($scope,ele,attrs) {
+               ele.bind('click',function () {
+                  ele.html('You clicked here');
+                 });}
+             }});
+</script>
+</body>
+</html>

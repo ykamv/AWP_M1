@@ -1,0 +1,43 @@
+<html>
+<head>
+<title>
+AngularJs Events Example
+</title>
+<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+<style type="text/css">
+a{
+
+padding:20px;
+
+border:1px solid black;
+
+width:30%;
+
+font-weight:bold;
+
+background-color:#2b8bc0;
+
+color:White;
+}
+
+</style>
+</head>
+<body ng-app="app" ng-controller="controllerName">
+    <nav>
+        <a href="#" ng-repeat="p in nav" ng-style="style" ng-mouseover="style={'border-bottom': '5px solid red','background-color':'pink'}" ng-click="func(p)" ng-mouseleave="style=none;">{{p}}</a><br><br>
+                        <p>You chose <b>{{data}}</b></p>
+
+    </nav>
+
+	<script>
+    var app = angular.module("app", []);
+    app.controller('controllerName', ['$scope', function ($scope) {
+        $scope.nav=["Home","About","Contact"];
+         $scope.func = function (data) {
+           $scope.data = data;
+          
+        };
+    }]);
+	</script>
+</body>
+</html>

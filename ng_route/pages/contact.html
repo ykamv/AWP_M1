@@ -1,0 +1,41 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Contact</title>
+<style>
+	form{width: 90vw;margin: 0 5vw 0 5vw;}
+</style>
+</head>
+
+<body>
+	
+	<h1 style="text-align: center">Contact Me</h1>
+	
+	<form name="myForm" class="mt-5 mb-5">
+		<div class="form-group">
+		  <label for="name">Name</label>
+		  <input type="text" name="name" class="form-control" ng-model="name" id="name" placeholder="Enter name" ng-minlength="3">
+		  <span ng-show="myForm.name.$touched && myForm.name.$error.minlength">min 3 chars.</span>
+		</div>
+		<div class="form-group">
+		  <label for="number">Number</label>
+		  <input type="number" name="number" ng-model="number" class="form-control" id="number"  placeholder="Enter Contact Number" ng-minlength="6" ng-maxlength="10">
+		  <span ng-show="myForm.number.$touched && myForm.number.$error.minlength">min 6 chars.</span>
+		</div>
+		<div class="form-group">
+		  <label for="Email">Email address</label>
+		  <input type="email" name="email" ng-model="email" class="form-control" id="email" placeholder="Enter email in format name@gmail.com">
+		  <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+		  <span ng-show="myForm.email.$touched && myForm.email.$error.email">Please enter valid email id.</span>
+		</div>
+		<div class="form-group">
+		  <label for="message">Message</label>
+		  <input type="message" ng-maxlength="50" name="message" ng-model="message" class="form-control" id="message" placeholder="Say Something..">
+		</div>
+		<span ng-show="myForm.message.$touched && myForm.message.$error.maxlength">Max 50 chars.</span>
+		<button type="submit" class="btn btn-primary">Submit</button>
+	  </form>
+	
+</body>
+</html>

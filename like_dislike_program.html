@@ -1,0 +1,57 @@
+<html>
+
+  <head>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  </head>
+
+  <body ng-app="myModule" ng-controller="myController">
+    <table>
+      <thead>
+        <tr>
+          <th>Technology</th>
+          <th>Likes</th>
+          <th>Dislikes</th>
+          <th>Buttons</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="t in technologies">
+          <td><img width="100" height="100" ng-src="{{t.href}}" /></td>
+          <td>{{ t.likes }}</td>
+          <td>{{ t.dislikes }}</td>
+          <td>
+            <input type="button" value="Like" ng-click="incrementLike(t)" /> |
+            <input type="button" value="Dislike" ng-click="incrementDislike(t)" />
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      var app = angular
+        .module("myModule", [])
+        .controller("myController", function ($scope) {
+          $scope.technologies = [
+            { "href": 'image1.png', likes: 0, dislikes: 0 },
+            { "href": 'image2.png', likes: 0, dislikes: 0 },
+            { "href": 'image3.png', likes: 0, dislikes: 0 },
+            { "href": 'image4.png', likes: 0, dislikes: 0 },
+            { "href": 'image5.png', likes: 0, dislikes: 0 },
+            { "href": 'image1.png', likes: 0, dislikes: 0 },
+          ];
+
+
+
+
+          $scope.incrementLike = function (technology) {
+            technology.likes++;
+          }
+
+          $scope.incrementDislike = function (technology) {
+            technology.dislikes++;
+          }
+
+        });
+    </script>
+  </body>
+
+</html>
